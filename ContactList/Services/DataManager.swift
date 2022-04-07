@@ -52,4 +52,6 @@ class DataManager {
         "razdva@gmail.com",
         "testtest@gmail.com"
     ]
+    
+    private init() {}
 }
