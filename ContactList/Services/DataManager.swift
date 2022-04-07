@@ -5,9 +5,9 @@
 //  Created by Dinmukhammed Sagyntkan on 07.04.2022.
 //
 
-import Foundation
-
 class DataManager {
+    
+    static let shared = DataManager()
     
     let names = [
         "Amir",

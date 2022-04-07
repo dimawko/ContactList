@@ -17,7 +17,6 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setupLabels()
-
     }
 }
 
@@ -28,7 +27,7 @@ extension DetailsViewController {
             case 0:
                 label.text = "\(person.name) \(person.surname)"
             case 1:
-                label.text = "Phone: \(person.number)"
+                label.text = "Phone: \(person.phoneNumber)"
             default:
                 label.text = "Email: \(person.email)"
             }

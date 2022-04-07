@@ -5,23 +5,28 @@
 //  Created by Dinmukhammed Sagyntkan on 07.04.2022.
 //
 
-import Foundation
-
 struct Person {
     let name: String
     let surname: String
-    let number: String
+    let phoneNumber: String
     let email: String
     
     static func getPersons() -> [Person] {
-        let data = DataManager()
         var persons: [Person] = []
-        for _ in 1...8 {
+        
+        let names = DataManager.shared.names.shuffled()
+        let surnames = DataManager.shared.surnames.shuffled()
+        let emails = DataManager.shared.emails.shuffled()
+        let phones = DataManager.shared.numbers.shuffled()
+        
+        let iterationCount = min(names.count, surnames.count, emails.count, phones.count)
+        
+        for index in 1..<iterationCount {
             let person = Person(
-                name: data.names.randomElement() ?? "",
-                surname: data.surnames.randomElement() ?? "",
-                number: data.numbers.randomElement() ?? "",
-                email: data.emails.randomElement() ?? ""
+                name: names[index],
+                surname: surnames[index],
+                phoneNumber: phones[index],
+                email: emails[index]
             )
             persons.append(person)
         }
